@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# CMD: leave
+# DESC: delete everything in current directory expect the file that you pass as args
 files=("$@")
 
 if [ $# -eq 0 ]; then
