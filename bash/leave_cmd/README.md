@@ -15,3 +15,9 @@ Given a list of files, `leave`:
 Example:
 ```bash
 leave important.txt notes.pdf
+```
+---
+## Steps to follow for global setup
+```
+sudo mv leave /usr/local/bin/
+sudo chmod +x /usr/local/bin/leave
