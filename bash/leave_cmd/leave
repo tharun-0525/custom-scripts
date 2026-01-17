@@ -1,0 +1,35 @@
+#!/bin/bash
+
+files=("$@")
+
+if [ $# -eq 0 ]; then
+	echo "Usage: leave file1 [file2  ...]"
+	exit 1
+fi
+
+exist=0
+for f in ${!files[@]}; do
+	if [[ -e "${files[$f]}" ]]; then
+		continue
+	else
+		echo "${files[$f]}  does not exist"
+		unset 'files[f]'
+	fi
+done
+
+if [ "${#files[@]}" -gt 0 ]; then
+	for f in *; do
+		keep=0
+		for file in ${files[@]}; do
+			if [ "$f" == "$file" ]; then
+				keep=1
+				break
+			fi
+		done
+		if [ $keep -eq 0 ]; then
+			rm -rf $f
+
+		fi	
+	done
+	echo "process done"
+fi
