@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# CMD: leave
+# DESC: Use it to delete files in a a directory except the ones you pass as args
+
 files=("$@")
 
 if [ $# -eq 0 ]; then
